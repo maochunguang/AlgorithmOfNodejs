@@ -5,13 +5,13 @@ var util = require('./utils');
  * @param {[Number]} arr 
  * @param {Number} n 
  */
-function bubbleSort(arr,n){
-    for(var i=0;i<n;i++){
-        for(var j=0;j<n-i-1;++j){
-            if(arr[j]>arr[j+1])
-                util.swap(arr,j,j+1)
+function bubbleSort(arr, n) {
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < n - i - 1; ++j) {
+            if (arr[j] > arr[j + 1])
+                util.swap(arr, j, j + 1)
         }
-        util.print(arr,n,i);
+        util.print(arr, n, i);
     }
 }
 /**
@@ -19,8 +19,21 @@ function bubbleSort(arr,n){
  * @param {[Number]} arr 
  * @param {Number} n 
  */
-function bubbleSort_skip(arr,n){
-    
+function bubbleSort_skip(arr, n) {
+    var i = 1;
+    while (i > 0) {
+        var pos = 0;
+        for (var j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                pos = j;
+                util.swap(arr, j, j + 1);
+                util.print(arr, n, j);
+            }
+            i = pos;
+        }
+
+    }
 }
 var arr = [3, 4, 2, 1, 6, 8, 7];
-bubbleSort(arr,7);
+bubbleSort(arr, 7);
+// bubbleSort_skip(arr, 7);
