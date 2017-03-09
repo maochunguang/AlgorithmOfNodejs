@@ -1,11 +1,11 @@
 var util = require('./utils');
 
 function partition(arr, low, high) {
-    var privot = arr[low];
+    var mid = arr[low];
     while (low < high) {
-        while (low < high && arr[high] >= privot) --high;
+        while (low < high && arr[high] >= mid) --high;
         util.swap(arr, low, high);
-        while (low < high && arr[low] <= privot) ++low;
+        while (low < high && arr[low] <= mid) ++low;
         util.swap(arr, low, high);
     }
     util.print(arr, 7, low);
@@ -19,9 +19,9 @@ function partition(arr, low, high) {
  */
 function quickSort(arr, low, high) {
     if (low < high) {
-        var privot = partition(arr, low, high);
-        quickSort(arr, low, privot - 1);
-        quickSort(arr, privot + 1, high);
+        var mid = partition(arr, low, high);
+        quickSort(arr, low, mid - 1);
+        quickSort(arr, mid + 1, high);
     }
 }
 var arr = [3, 4, 2, 1, 6, 8, 7];

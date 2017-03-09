@@ -21,6 +21,14 @@ function fib_dp(n) {
     }
     return b;
 }
-console.log(fib_r(6));
-console.log(fib_rw(0, 1, 6));
-console.log(fib_dp(6));
+console.time('fib_r');
+console.log(fib_r(20));
+console.timeEnd('fib_r');
+
+console.time('fib_rw');
+console.log(fib_rw(0, 1, 20));
+console.timeEnd('fib_rw');
+
+console.time('fib_dp');
+console.log(fib_dp(20));
+console.timeEnd('fib_dp');
