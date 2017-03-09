@@ -34,5 +34,5 @@ for (var i = 0; i < helix.length; i++) {
     for (var j = 0; j < helix[i].length; j++) {
         row += helix[i][j] + ' ';
     }
-    console.log(html);
+    console.log(row);
 }
