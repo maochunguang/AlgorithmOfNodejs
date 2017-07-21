@@ -2,12 +2,12 @@ var util = require('./utils');
 
 function partition(arr, low, high) {
     var mid = arr[low];
-    while (low < high) {
-        while (low < high && arr[high] >= mid) --high;
-        util.swap(arr, low, high);
-        while (low < high && arr[low] <= mid) ++low;
-        util.swap(arr, low, high);
-    }
+    while (low < high && arr[high] >= mid) 
+        --high;
+    util.swap(arr, low, high);
+    while (low < high && arr[low] <= mid) 
+        ++low;
+    util.swap(arr, low, high);
     util.print(arr, 7, low);
     return low;
 }
@@ -24,5 +24,5 @@ function quickSort(arr, low, high) {
         quickSort(arr, mid + 1, high);
     }
 }
-var arr = [3, 4, 2, 1, 6, 8, 7];
+var arr = [3, 5, 2, 9, 6, 8, 7];
 quickSort(arr, 0, 6);
